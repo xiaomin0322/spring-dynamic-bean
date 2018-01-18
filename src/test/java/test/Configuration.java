@@ -30,10 +30,11 @@ public class Configuration {
                 factorys = (DefaultListableBeanFactory) context.getBeanFactory();
         BeanDefinitionBuilder builder
                 = BeanDefinitionBuilder.rootBeanDefinition(DruidDataSource.class);
-        builder.addPropertyValue("driver",configModel.getClassName());
+      /*  builder.addPropertyValue("driver",configModel.getClassName());
         builder.addPropertyValue("username",configModel.getUsername());
         builder.addPropertyValue("password",configModel.getPassword());
-        builder.addPropertyValue("url",configModel.getUrl());
+        builder.addPropertyValue("url",configModel.getUrl());*/
+
         factorys.registerBeanDefinition("datasource",
                 builder.getBeanDefinition());
         return (DruidDataSource) applicationContext.getBean("datasource");
